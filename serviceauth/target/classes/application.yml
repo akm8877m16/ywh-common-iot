@@ -1,0 +1,31 @@
+server:
+  port: 8081
+
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    prefer-ip-address: true
+  client:
+    registryFetchIntervalSeconds: 5
+    serviceUrl:
+      defaultZone: http://localhost:8000/eureka/
+
+spring:
+  application:
+    name: service-auth
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:mysql://localhost:3306/ywh_iot_test
+    username: root
+    password: Ywh@68531026
+    driver-class-name: com.mysql.jdbc.Driver
+
+logging.level.org.springframework.security: DEBUG
+
+security:
+  oauth2:
+    resource:
+      filter-order: 3

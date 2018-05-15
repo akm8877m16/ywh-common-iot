@@ -1,0 +1,3 @@
+ywh/common/iot/service/mqtt/MqttApplication.class
+ywh/common/iot/service/mqtt/config/MqttConfiguration.class
+ywh/common/iot/service/mqtt/controller/MqttController.class

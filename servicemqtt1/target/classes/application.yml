@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: service-mqtt
+
+server:
+  port: 8070
+
+msg: Hello
+
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    prefer-ip-address: true
+  client:
+    registryFetchIntervalSeconds: 5
+    serviceUrl:
+      defaultZone: http://localhost:8000/eureka/
+
+
+security:
+  oauth2:
+    resource:
+      id: service-mqtt
+      user-info-uri: http://localhost:8082/uaa/current
+      prefer-token-info: false
+
+logging.level.org.springframework.security: DEBUG

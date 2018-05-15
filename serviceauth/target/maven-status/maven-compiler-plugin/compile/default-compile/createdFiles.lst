@@ -1,0 +1,5 @@
+ywh/common/iot/service/auth/config/controller/AuthController.class
+ywh/common/iot/service/auth/config/config/OAuthConfiguration$AuthenticationManagerConfiguration.class
+ywh/common/iot/service/auth/config/config/OAuthConfiguration.class
+ywh/common/iot/service/auth/config/config/ResourceServerConfiguration.class
+ywh/common/iot/service/auth/config/AuthApplication.class
