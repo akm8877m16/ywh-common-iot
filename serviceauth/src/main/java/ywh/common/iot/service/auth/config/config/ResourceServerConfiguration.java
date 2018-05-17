@@ -15,7 +15,7 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
 
         http
                 .authorizeRequests()
-                .antMatchers("/current").access("#oauth2.hasScope('read')")
+                .antMatchers("/current").hasAnyRole("ADMIN","USER")
                 .anyRequest().authenticated()
         ;
         // @formatter:on

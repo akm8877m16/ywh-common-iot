@@ -25,3 +25,11 @@ security:
       prefer-token-info: false
 
 logging.level.org.springframework.security: DEBUG
+
+ywh:
+  mqtt:
+    broker: 39.104.49.84
+    port: 1883
+    qos: 1
+
+mqttRootTopic: aiwu

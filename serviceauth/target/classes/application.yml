@@ -20,7 +20,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/ywh_iot_test
     username: root
-    password: Ywh@68531026
+    password: 123456
     driver-class-name: com.mysql.jdbc.Driver
 
 logging.level.org.springframework.security: DEBUG
