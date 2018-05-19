@@ -7,4 +7,4 @@ ywh-common-iot
 
 http://118.190.202.155:8082/uaa/oauth/token?grant_type=password&username=dave&password=secret
 
-![]https://github.com/akm8877m16/ywh-common-iot/raw/master/pics/登陆获取token.PNG
+![](https://github.com/akm8877m16/ywh-common-iot/raw/master/pics/登陆获取token.PNG)
