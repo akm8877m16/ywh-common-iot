@@ -11,12 +11,13 @@ import org.springframework.stereotype.Component;
 import ywh.common.mqtt.MQTTPublisher;
 import ywh.common.mqtt.MqttConfig;
 
+import javax.annotation.PreDestroy;
 import javax.annotation.Resource;
 
 @Component
 public class Publisher implements MqttConfig, MQTTPublisher,MqttCallback {
 
-    @Resource
+    @Autowired
     MqttParameters mqttParameters;
 
     final private String colon = ":";
@@ -31,14 +32,14 @@ public class Publisher implements MqttConfig, MQTTPublisher,MqttCallback {
     /**
      * Private default constructor
      */
-    private Publisher() {
+    public Publisher() {
         this.config();
     }
 
     /**
      * Private constructor
      */
-    private Publisher(String broker, Integer port, Boolean withUserNamePass) {
+    public Publisher(String broker, Integer port, Boolean withUserNamePass) {
         this.config(broker, port, withUserNamePass);
     }
 
@@ -72,7 +73,7 @@ public class Publisher implements MqttConfig, MQTTPublisher,MqttCallback {
     @Override
     public void config() {
 
-        this.brokerUrl = this.TCP + "39.104.49.84" + colon + "1883";
+        this.brokerUrl = this.TCP + "118.190.202.155" + colon + "1883";
         this.persistence = new MemoryPersistence();
         this.connectionOptions = new MqttConnectOptions();
         try {
@@ -84,6 +85,7 @@ public class Publisher implements MqttConfig, MQTTPublisher,MqttCallback {
             logger.error("ERROR", me);
         }
     }
+
 
     /*
      * (non-Javadoc)
@@ -183,5 +185,12 @@ public class Publisher implements MqttConfig, MQTTPublisher,MqttCallback {
             logger.error("ERROR", me);
         }
     }
+
+    @PreDestroy
+    public void preDestroy(){
+        this.disconnect();
+        logger.info("disconnect before destroy");
+    }
+
 
 }
