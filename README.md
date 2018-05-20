@@ -15,3 +15,8 @@ http://118.190.202.155:8082/uaa/oauth/token?grant_type=password&username=dave&pa
 获取token后既可以尝试调用遥控接口
 
 http://118.190.202.155:8082/mqtt/control/868575023510201?access_token=ae3355a5-cd88-49ed-a6ef-4899c600ab38
+
+如果用户名密码不对，则返回： 
+
+![](https://github.com/akm8877m16/ywh-common-iot/raw/master/pics/遥控设备超时.PNG)
+
