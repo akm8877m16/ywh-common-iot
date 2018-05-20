@@ -17,6 +17,12 @@ http://118.190.202.155:8082/uaa/oauth/token?grant_type=password&username=dave&pa
 
 目前只是测试阶段，所以token寿命为2分钟， refresh_token寿命为5分钟，实际生产环境会加为12小时和5天
 
+如果token失效，需要获取新token, 有两种方式 1 调用获取token接口 2 调用刷新token接口
+Post  参数放入body或url均可
+http://118.190.202.155:8082/uaa/oauth/token?grant_type=refresh_token&refresh_token=18e0c7bd-bc23-464c-b160-36a3cc43c483&client_id=client&client_secret=client_secret
+
+![](https://github.com/akm8877m16/ywh-common-iot/raw/master/pics/刷新token.PNG)
+
 获取token后既可以尝试调用遥控接口
 
 http://118.190.202.155:8082/mqtt/control/868575023510201?access_token=ae3355a5-cd88-49ed-a6ef-4899c600ab38
@@ -30,7 +36,7 @@ http://118.190.202.155:8082/mqtt/control/868575023510201?access_token=ae3355a5-c
 
 ![](https://github.com/akm8877m16/ywh-common-iot/raw/master/pics/遥控非所属设备.PNG)
 
-只有token验证通过，别且检测设备是否与用户绑定通过，才调用真正的遥控接口：
+只有token验证通过，并且检测设备是否与用户绑定通过，才能调用真正的遥控接口：
 http://118.190.202.155:8082/mqtt/control/868575023510201?access_token=1f2b69ad-403e-45a3-b485-6248eda0754e
 需要通过post 传递参数： attribute: topic属性， 实际topic为：mqtt根目录(目前默认/device)/设备id(比如868575023510201)/attribute值
                         payload: 遥控指令，目前传递类型为字符串
