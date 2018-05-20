@@ -32,4 +32,4 @@ ywh:
     port: 1883
     qos: 1
 
-mqttRootTopic: aiwu
+mqttRootTopic: device
