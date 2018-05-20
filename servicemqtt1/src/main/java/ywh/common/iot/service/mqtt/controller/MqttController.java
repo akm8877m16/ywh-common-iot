@@ -65,7 +65,7 @@ public class MqttController {
         String attribute = request.getParameter("attribute");
         String payload = request.getParameter("payload");
         String realTopic = mqttRootTopic + "/" + deviceSn + "/" + attribute;
-        mqttPublisher.publishMessage(mqttRootTopic,payload);
+        mqttPublisher.publishMessage(realTopic,payload);
         return ResultUtil.success();
     }
 
