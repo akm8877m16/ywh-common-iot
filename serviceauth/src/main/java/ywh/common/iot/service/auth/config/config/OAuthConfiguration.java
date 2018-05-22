@@ -7,6 +7,7 @@ import org.springframework.core.annotation.Order;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.authentication.configurers.GlobalAuthenticationConfigurerAdapter;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
@@ -14,6 +15,7 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.token.store.JdbcTokenStore;
+import org.springframework.security.provisioning.JdbcUserDetailsManager;
 
 import javax.sql.DataSource;
 
@@ -40,7 +42,6 @@ public class OAuthConfiguration extends AuthorizationServerConfigurerAdapter {
         //允许表单认证
         security.allowFormAuthenticationForClients();
         security.tokenKeyAccess("permitAll()").checkTokenAccess("isAuthenticated()");
-
         //security.passwordEncoder(passwordEncoder);
     }
 
@@ -76,11 +77,14 @@ public class OAuthConfiguration extends AuthorizationServerConfigurerAdapter {
         @Autowired
         private DataSource dataSource;
 
+        private BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+
+
         @Override
         public void init(AuthenticationManagerBuilder auth) throws Exception {
-            auth.jdbcAuthentication().dataSource(dataSource)
-            ;
+            auth.jdbcAuthentication().dataSource(dataSource).passwordEncoder(passwordEncoder);
         }
+
     }
 
 }

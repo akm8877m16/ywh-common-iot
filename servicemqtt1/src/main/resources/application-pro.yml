@@ -1,7 +1,8 @@
 spring:
   application:
     name: service-mqtt
-
+  profiles:
+    active: pro
 server:
   port: 8070
 

@@ -13,6 +13,9 @@ eureka:
 spring:
   application:
     name: service-auth
+  profiles:
+    active: pro
+
   jpa:
     show-sql: true
     hibernate:
