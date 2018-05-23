@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-//@EnableJpaRepositories
+@EnableJpaRepositories("ywh.common.repository")
 @EntityScan("ywh.common.entity")
 public class AuthApplication {
 

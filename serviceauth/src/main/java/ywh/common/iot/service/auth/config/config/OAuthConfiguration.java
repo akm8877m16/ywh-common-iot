@@ -29,7 +29,9 @@ public class OAuthConfiguration extends AuthorizationServerConfigurerAdapter {
     @Autowired
     private DataSource dataSource;
 
-    private BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+    //private BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+    @Autowired
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @Bean
     public JdbcTokenStore tokenStore() {
@@ -77,12 +79,17 @@ public class OAuthConfiguration extends AuthorizationServerConfigurerAdapter {
         @Autowired
         private DataSource dataSource;
 
-        private BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        @Bean
+         public BCryptPasswordEncoder bCryptPasswordEncoder(){
+            return new BCryptPasswordEncoder();
+        }
+
+        //private BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
 
         @Override
         public void init(AuthenticationManagerBuilder auth) throws Exception {
-            auth.jdbcAuthentication().dataSource(dataSource).passwordEncoder(passwordEncoder);
+            auth.jdbcAuthentication().dataSource(dataSource).passwordEncoder(bCryptPasswordEncoder());
         }
 
     }
