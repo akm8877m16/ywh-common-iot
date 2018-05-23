@@ -1,3 +1,4 @@
+/*
 package ywh.common.iot.service.auth.config.model;
 
 import javax.persistence.*;
@@ -100,3 +101,4 @@ public class User {
         this.userRoles=userRole;
     }
 }
+*/
