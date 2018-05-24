@@ -60,6 +60,7 @@ public class AuthController {
         User result = userRepository.findByUsername(user.getUsername());
         if(result == null){
             user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+            user.setEnabled(true);
             result = userRepository.save(user);
             return ResultUtil.success(result);
         }
@@ -98,6 +99,34 @@ public class AuthController {
         UserRole userRole = new UserRole(roleBean.getRole());
         result.addRole(userRole);
         userRepository.save(result);
+        return ResultUtil.success(result);
+    }
+
+    @PutMapping("/admin/user/enable")
+    public Msg enableUser(@RequestBody UserBean userBean){
+        if(userBean.getName() == null){
+            return ResultUtil.success("invalid userName");
+        }
+        User result = userRepository.findByUsername(userBean.getName());
+        if(result == null){
+            return ResultUtil.success("user not exist");
+        }
+        result.setEnabled(true);
+        result = userRepository.save(result);
+        return ResultUtil.success(result);
+    }
+
+    @PutMapping("/admin/user/disable")
+    public Msg disableUser(@RequestBody UserBean userBean){
+        if(userBean.getName() == null){
+            return ResultUtil.success("invalid userName");
+        }
+        User result = userRepository.findByUsername(userBean.getName());
+        if(result == null){
+            return ResultUtil.success("user not exist");
+        }
+        result.setEnabled(false);
+        result = userRepository.save(result);
         return ResultUtil.success(result);
     }
 
