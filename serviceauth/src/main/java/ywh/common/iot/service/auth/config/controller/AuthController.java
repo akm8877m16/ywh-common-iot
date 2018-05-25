@@ -1,11 +1,13 @@
 package ywh.common.iot.service.auth.config.controller;
 
-import com.sun.org.apache.regexp.internal.RE;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
+import springfox.documentation.annotations.ApiIgnore;
 import ywh.common.bean.RoleBean;
 import ywh.common.bean.UserBean;
 import ywh.common.entity.User;
@@ -14,10 +16,9 @@ import ywh.common.repository.UserRepository;
 import ywh.common.util.constant.Role;
 import ywh.common.util.response.Msg;
 import ywh.common.util.response.ResultUtil;
-
-import javax.servlet.http.HttpServletRequest;
 import java.security.Principal;
 
+@Api(tags = "认证服务接口", description = "认证服务模块相关接口")
 @RestController
 public class AuthController {
 
@@ -31,6 +32,7 @@ public class AuthController {
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @GetMapping("/current")
+    @ApiIgnore
     public Principal user(Principal user){
         return user;
     }
@@ -50,6 +52,7 @@ public class AuthController {
     }
     */
     @PostMapping("/admin/user")
+    @ApiOperation(value = "新增用户",notes = "目前只有拥有ROLE_ADMIN权限的用户才能添加新用户")
     public Msg addUser(@RequestBody User user){
         logger.info(user.toString());
         String userName = user.getUsername();
