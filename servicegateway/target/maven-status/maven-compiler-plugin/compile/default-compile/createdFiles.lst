@@ -1,2 +1,4 @@
-ywh/common/iot/service/gateway/config/SecurityConfig.class
-ywh/common/iot/service/gateway/GatewayApplication.class
+ywh\common\iot\service\gateway\GatewayApplication.class
+ywh\common\iot\service\gateway\config\GeneralConfig.class
+ywh\common\iot\service\gateway\filter\CustomPostFilter.class
+ywh\common\iot\service\gateway\config\SecurityConfig.class

@@ -6,8 +6,6 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="common-mqtt" />
-        <module name="common-util" />
         <module name="serviceadmin" />
         <module name="serviceauth" />
         <module name="servicegateway" />

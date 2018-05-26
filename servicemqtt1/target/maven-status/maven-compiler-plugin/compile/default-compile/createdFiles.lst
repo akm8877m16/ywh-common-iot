@@ -1,3 +1,6 @@
-ywh/common/iot/service/mqtt/MqttApplication.class
-ywh/common/iot/service/mqtt/config/MqttConfiguration.class
-ywh/common/iot/service/mqtt/controller/MqttController.class
+ywh\common\iot\service\mqtt\config\GeneralConfiguration.class
+ywh\common\iot\service\mqtt\config\SecurityConfiguration.class
+ywh\common\iot\service\mqtt\mqtt\MqttParameters.class
+ywh\common\iot\service\mqtt\controller\MqttController.class
+ywh\common\iot\service\mqtt\MqttApplication.class
+ywh\common\iot\service\mqtt\mqtt\Publisher.class

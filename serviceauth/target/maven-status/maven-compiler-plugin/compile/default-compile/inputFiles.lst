@@ -1,7 +1,7 @@
-/home/moreton/workspace/aiwuplatform/serviceauth/src/main/java/ywh/common/iot/service/auth/config/model/User.java
-/home/moreton/workspace/aiwuplatform/serviceauth/src/main/java/ywh/common/iot/service/auth/config/config/OAuthConfiguration.java
-/home/moreton/workspace/aiwuplatform/serviceauth/src/main/java/ywh/common/iot/service/auth/config/config/ResourceServerConfiguration.java
-/home/moreton/workspace/aiwuplatform/serviceauth/src/main/java/ywh/common/iot/service/auth/config/controller/AuthController.java
-/home/moreton/workspace/aiwuplatform/serviceauth/src/main/java/ywh/common/iot/service/auth/config/dao/UserRepository.java
-/home/moreton/workspace/aiwuplatform/serviceauth/src/main/java/ywh/common/iot/service/auth/config/AuthApplication.java
-/home/moreton/workspace/aiwuplatform/serviceauth/src/main/java/ywh/common/iot/service/auth/config/model/UserRole.java
+D:\spring boot\ywh-common-iot\ywh-common-iot\serviceauth\src\main\java\ywh\common\iot\service\auth\config\config\ResourceServerConfiguration.java
+D:\spring boot\ywh-common-iot\ywh-common-iot\serviceauth\src\main\java\ywh\common\iot\service\auth\config\AuthApplication.java
+D:\spring boot\ywh-common-iot\ywh-common-iot\serviceauth\src\main\java\ywh\common\iot\service\auth\config\config\OAuthConfiguration.java
+D:\spring boot\ywh-common-iot\ywh-common-iot\serviceauth\src\main\java\ywh\common\iot\service\auth\config\dao\UserRepository.java
+D:\spring boot\ywh-common-iot\ywh-common-iot\serviceauth\src\main\java\ywh\common\iot\service\auth\config\model\UserRole.java
+D:\spring boot\ywh-common-iot\ywh-common-iot\serviceauth\src\main\java\ywh\common\iot\service\auth\config\model\User.java
+D:\spring boot\ywh-common-iot\ywh-common-iot\serviceauth\src\main\java\ywh\common\iot\service\auth\config\controller\AuthController.java
