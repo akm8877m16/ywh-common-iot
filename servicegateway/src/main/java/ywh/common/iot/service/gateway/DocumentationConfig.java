@@ -1,4 +1,4 @@
-package ywh.common.iot.service.gateway.config;
+package ywh.common.iot.service.gateway;
 
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
@@ -14,8 +14,8 @@ public class DocumentationConfig implements SwaggerResourcesProvider {
     @Override
     public List<SwaggerResource> get() {
         List resources = new ArrayList<>();
-        resources.add(swaggerResource("用户认证服务", "/userAuth/v1/api-docs", "1.0"));
-        resources.add(swaggerResource("MQTT远程服务", "/mqtt/v1/api-docs", "1.0"));
+        resources.add(swaggerResource("用户认证服务", "/uaa/v2/api-docs", "2.0"));
+        resources.add(swaggerResource("MQTT远程服务", "/mqtt/v2/api-docs", "2.0"));
         return resources;
     }
 

@@ -9,12 +9,11 @@ eureka:
   instance:
     leaseRenewalIntervalInSeconds: 10
     prefer-ip-address: true
+    status-page-url: http://localhost:${server.port}/swagger-ui.html
   client:
     registryFetchIntervalSeconds: 5
     serviceUrl:
       defaultZone: http://localhost:8000/eureka/
-  instance:
-      status-page-url: http://localhost:8083/swagger-ui.html
 
 zuul:
   routes:

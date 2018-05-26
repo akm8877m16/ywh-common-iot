@@ -1,5 +1,7 @@
 package ywh.common.iot.service.auth.config.controller;
 
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +24,9 @@ public class DeviceController {
     @Autowired
     UserRepository userRepository;
 
+    @ApiOperation(value = "添加用户所属设备",notes = "目前只有拥有ROLE_ADMIN权限的用户才能添加设备")
     @PostMapping("/admin/device")
-    public Msg addDevice(@RequestBody DeviceBean deviceBean){
+    public Msg addDevice(@RequestBody @ApiParam(name="设备对象",value="传入json格式，username,sn为必填项",required=true) DeviceBean deviceBean){
         if(deviceBean.getUsername() == null){
             return ResultUtil.success("inValid username");
         }
@@ -39,4 +42,5 @@ public class DeviceController {
         result = userRepository.save(result);
         return ResultUtil.success(result);
     }
+
 }
