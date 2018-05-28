@@ -15,6 +15,8 @@ import ywh.common.repository.UserRepository;
 import ywh.common.util.constant.Role;
 import ywh.common.util.response.Msg;
 import ywh.common.util.response.ResultUtil;
+
+import javax.transaction.Transactional;
 import java.security.Principal;
 
 @Api(tags = "认证服务接口", description = "认证服务模块相关接口")
@@ -77,6 +79,7 @@ public class AuthController {
 
     @ApiOperation(value = "删除用户，该接口会删除用户与相关设备信息，建议优先使用禁用账户接口",notes = "目前只有拥有ROLE_ADMIN权限的用户才能删除用户")
     @DeleteMapping("/admin/user")
+    @Transactional
     public Msg deleteUser(@RequestBody @ApiParam(name="用户对象",value="传入json格式，username为必填项，新用户默认开启可用",required=true)  UserBean userBean){
         String userName = userBean.getUserName();
         if(userName == null){

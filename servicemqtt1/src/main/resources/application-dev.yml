@@ -46,3 +46,4 @@ ywh:
     qos: 1
 
 mqttRootTopic: /device
+

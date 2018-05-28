@@ -5,7 +5,7 @@ eureka:
   instance:
     leaseRenewalIntervalInSeconds: 10
     prefer-ip-address: true
-    status-page-url: http://localhost:${server.port}/swagger-ui.html
+    status-page-url: http://118.190.202.155:${server.port}/swagger-ui.html
 
   client:
     registryFetchIntervalSeconds: 5
@@ -34,3 +34,4 @@ security:
   oauth2:
     resource:
       filter-order: 3
+

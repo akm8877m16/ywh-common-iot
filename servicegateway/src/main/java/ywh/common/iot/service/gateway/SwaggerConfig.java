@@ -24,7 +24,7 @@ public class SwaggerConfig {
         return new ApiInfoBuilder()
                 .title("艾物物联网系统后台")
                 .description("艾物物联网系统后台接口说明")
-                .termsOfServiceUrl("http://localhost:8082")
+                .termsOfServiceUrl("http://118.190.202.155:8082")
                 .contact(new Contact("殷文昊", "", "akm8877m16@126.com"))
                 .version("1.0")
                 .build();
