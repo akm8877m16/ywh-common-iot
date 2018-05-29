@@ -33,15 +33,6 @@ ribbon:
   ReadTimeout: 6000
   ConnectTimeout: 6000
 
-hystrix:
-  command:
-    default:
-      execution:
-        isolation:
-          strategy: THREAD
-          thread:
-            timeoutInMilliseconds: 7000
-
 security:
   oauth2:
     client:
