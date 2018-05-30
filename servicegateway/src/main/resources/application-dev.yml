@@ -1,0 +1,46 @@
+spring:
+  application:
+    name: service-gateway
+  profiles:
+    active: dev
+
+server:
+  port: 8082
+
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    prefer-ip-address: true
+    status-page-url: http://localhost:${server.port}/swagger-ui.html
+  client:
+    registryFetchIntervalSeconds: 5
+    serviceUrl:
+      defaultZone: http://localhost:8000/eureka/
+
+zuul:
+  routes:
+    uaa:
+      path: /uaa/**
+      sensitiveHeaders:
+      serviceId: service-auth
+    mqtt:
+      path: /mqtt/**
+      sensitiveHeaders:
+      serviceId: service-mqtt
+  add-proxy-headers: true
+
+ribbon:
+  eager-load:
+    enabled: true
+  ReadTimeout: 6000
+  ConnectTimeout: 6000
+
+security:
+  oauth2:
+    client:
+      access-token-uri: http://localhost:8082/uaa/oauth/token
+      user-authorization-uri: http://localhost:8082/uaa/oauth/authorize
+      client-id: client
+    resource:
+      user-info-uri: http://localhost:8082/uaa/current
+      prefer-token-info: false

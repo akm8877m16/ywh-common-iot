@@ -47,3 +47,8 @@ ywh:
 
 mqttRootTopic: /device
 
+swagger:
+  oauth:
+    authLink: http://localhost:8082/uaa
+    clientId: client
+    clientSecret: client_secret

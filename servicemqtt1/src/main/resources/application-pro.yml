@@ -46,3 +46,9 @@ ywh:
     qos: 1
 
 mqttRootTopic: /device
+
+swagger:
+  oauth:
+    authLink: http://118.190.202.155:8082/uaa
+    clientId: client
+    clientSecret: client_secret

@@ -65,6 +65,7 @@ public class AuthController {
             User user = new User();
             user.setUsername(userName);
             user.setPassword(bCryptPasswordEncoder.encode(passWord));
+            user.setMoilbePhone(userBean.getMobilePhone());
             Boolean enabled = userBean.getEnabled();
             if(enabled == null){
                 user.setEnabled(true);

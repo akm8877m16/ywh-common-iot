@@ -32,3 +32,8 @@ security:
   oauth2:
     resource:
       filter-order: 3
+swagger:
+  oauth:
+    authLink: http://localhost:8082/uaa
+    clientId: client
+    clientSecret: client_secret
