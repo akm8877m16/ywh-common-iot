@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: service-nbiot
+  profiles:
+    active: dev
+
+server:
+  port: 8071
+  #ssl:
+  #  key-store: classpath:ywh.keystore
+  #  key-store-password: 123456
+  #  trust-store: classpath:ywh.keystore
+  #  trust-store-password: 123456
+  #  client-auth: need
+
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    prefer-ip-address: true
+    status-page-url: http://localhost:${server.port}/swagger-ui.html
+  client:
+    registryFetchIntervalSeconds: 5
+    serviceUrl:
+      defaultZone: http://localhost:8000/eureka/
+

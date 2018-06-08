@@ -27,6 +27,10 @@ zuul:
       path: /mqtt/**
       sensitiveHeaders:
       serviceId: service-mqtt
+    nbiot:
+      path: /nbiot/**
+      sensitiveHeaders:
+      serviceId: service-nbiot
   add-proxy-headers: true
 
 ribbon:

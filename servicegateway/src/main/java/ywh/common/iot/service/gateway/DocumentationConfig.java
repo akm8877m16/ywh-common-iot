@@ -16,6 +16,8 @@ public class DocumentationConfig implements SwaggerResourcesProvider {
         List resources = new ArrayList<>();
         resources.add(swaggerResource("用户认证服务", "/uaa/v2/api-docs", "2.0"));
         resources.add(swaggerResource("MQTT远程服务", "/mqtt/v2/api-docs", "2.0"));
+        resources.add(swaggerResource("NB-IOT远程服务", "/nbiot/v2/api-docs", "2.0"));
+
         return resources;
     }
 

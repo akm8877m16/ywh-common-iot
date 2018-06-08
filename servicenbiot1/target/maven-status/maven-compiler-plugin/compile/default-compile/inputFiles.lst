@@ -1,0 +1,8 @@
+/home/moreton/workspace/aiwuplatform/servicenbiot1/src/main/java/ywh/common/iot/service/nbiot/service/NbiotService.java
+/home/moreton/workspace/aiwuplatform/servicenbiot1/src/main/java/ywh/common/iot/service/nbiot/SwaggerConfig.java
+/home/moreton/workspace/aiwuplatform/servicenbiot1/src/main/java/ywh/common/iot/service/nbiot/config/AppConfig.java
+/home/moreton/workspace/aiwuplatform/servicenbiot1/src/main/java/ywh/common/iot/service/nbiot/Controller/NbiotController.java
+/home/moreton/workspace/aiwuplatform/servicenbiot1/src/main/java/ywh/common/iot/service/nbiot/bean/AuthBean.java
+/home/moreton/workspace/aiwuplatform/servicenbiot1/src/main/java/ywh/common/iot/service/nbiot/httpUtil/HttpClientUtils2.java
+/home/moreton/workspace/aiwuplatform/servicenbiot1/src/main/java/ywh/common/iot/service/nbiot/NbiotApplication.java
+/home/moreton/workspace/aiwuplatform/servicenbiot1/src/main/java/ywh/common/iot/service/nbiot/jsonUtil/JsonUtil.java

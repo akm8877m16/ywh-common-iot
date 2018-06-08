@@ -14,6 +14,7 @@
         <module>serviceadmin</module>
         <module>servicegateway</module>
         <module>servicemqtt1</module>
+        <module>servicenbiot1</module>
     </modules>
 
     <parent>
