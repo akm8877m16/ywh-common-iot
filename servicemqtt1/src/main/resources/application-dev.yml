@@ -16,6 +16,12 @@ spring:
 
 server:
   port: 8070
+  ssl:
+    key-store: classpath:mqtt.keystore
+    key-store-password: 123456
+    #keyStoreType: PKCS12
+    trust-store: classpath:mqtt.keystore
+    trust-store-password: 123456
 
 msg: Hello
 
@@ -34,8 +40,8 @@ security:
   oauth2:
     resource:
       id: service-mqtt
-      user-info-uri: http://localhost:8082/uaa/current
-      prefer-token-info: false
+      user-info-uri: https://localhost:8082/uaa/current
+      prefer-token-info: true
 
 logging.level.org.springframework.security: DEBUG
 
@@ -49,6 +55,6 @@ mqttRootTopic: /device
 
 swagger:
   oauth:
-    authLink: http://localhost:8082/uaa
+    authLink: https://localhost:8082/uaa
     clientId: client
     clientSecret: client_secret

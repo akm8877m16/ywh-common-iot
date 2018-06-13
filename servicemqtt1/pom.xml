@@ -96,6 +96,13 @@
     </dependencies>
 
     <build>
+        <resources>
+            <resource>
+                <!-- 防止JKS被maven错误解析 -->
+                <directory>src/main/resources</directory>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

@@ -37,6 +37,6 @@ security:
 
 swagger:
   oauth:
-    authLink: http://118.190.202.155:8082/uaa
+    authLink: https://118.190.202.155:8082/uaa
     clientId: client
     clientSecret: client_secret

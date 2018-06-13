@@ -1,5 +1,6 @@
 package ywh.common.iot.service.gateway;
 
+import com.google.common.collect.Sets;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.ApiInfoBuilder;
@@ -17,14 +18,15 @@ public class SwaggerConfig {
     @Bean
     public Docket createRestApi() {
         return new Docket(DocumentationType.SWAGGER_2)
-                .apiInfo(apiInfo());
+                .apiInfo(apiInfo())
+                .protocols(Sets.newHashSet("https","http"));
     }
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title("艾物物联网系统后台")
                 .description("艾物物联网系统后台接口说明")
-                .termsOfServiceUrl("http://118.190.202.155:8082")
+                .termsOfServiceUrl("https://118.190.202.155:8082")
                 .contact(new Contact("殷文昊", "", "akm8877m16@126.com"))
                 .version("1.0")
                 .build();

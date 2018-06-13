@@ -6,6 +6,12 @@ spring:
 
 server:
   port: 8082
+  ssl:
+    key-store: classpath:ywh1.keystore
+    key-store-password: 123456
+    #keyStoreType: PKCS12
+    trust-store: classpath:ywh1.keystore
+    trust-store-password: 123456
 
 eureka:
   instance:
@@ -42,9 +48,10 @@ ribbon:
 security:
   oauth2:
     client:
-      access-token-uri: http://localhost:8082/uaa/oauth/token
-      user-authorization-uri: http://localhost:8082/uaa/oauth/authorize
+      access-token-uri: https://localhost:8082/uaa/oauth/token
+      user-authorization-uri: https://localhost:8082/uaa/oauth/authorize
       client-id: client
     resource:
-      user-info-uri: http://localhost:8082/uaa/current
+      user-info-uri: https://localhost:8082/uaa/current
       prefer-token-info: false
+

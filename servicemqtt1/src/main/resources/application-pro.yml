@@ -34,7 +34,7 @@ security:
   oauth2:
     resource:
       id: service-mqtt
-      user-info-uri: http://localhost:8082/uaa/current
+      user-info-uri: https://localhost:8082/uaa/current
       prefer-token-info: false
 
 logging.level.org.springframework.security: DEBUG
@@ -49,6 +49,6 @@ mqttRootTopic: /device
 
 swagger:
   oauth:
-    authLink: http://118.190.202.155:8082/uaa
+    authLink: https://118.190.202.155:8082/uaa
     clientId: client
     clientSecret: client_secret
