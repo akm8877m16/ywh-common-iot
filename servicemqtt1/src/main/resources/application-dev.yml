@@ -16,12 +16,12 @@ spring:
 
 server:
   port: 8070
-  ssl:
-    key-store: classpath:mqtt.keystore
-    key-store-password: 123456
+  #ssl:
+    #key-store: classpath:mqtt.keystore
+    #key-store-password: 123456
     #keyStoreType: PKCS12
-    trust-store: classpath:mqtt.keystore
-    trust-store-password: 123456
+    #trust-store: classpath:mqtt.keystore
+    #trust-store-password: 123456
 
 msg: Hello
 

@@ -32,4 +32,17 @@ public class CallbackController {
         return ResultUtil.success();
     }
 
+
+    @ApiOperation(value = "设备服务信息变化通知",notes = "订阅设备服务信息变化通知后(订阅的通知类型为 serviceInfoChanged),设备服务信\n" +
+            "息发生变化时平台会给第三方应用推送设备服务信息变化通知。")
+    @PostMapping(value = "/deviceStaticInfoChange")
+    public Msg deviceStaticInfoChange(@RequestBody String params){
+        logger.info(params);
+        System.out.println(params);
+        Map map = JsonUtil.string2Map(params);
+        logger.info(map.toString());
+        System.out.println(map.toString());
+        return ResultUtil.success();
+    }
+
 }
