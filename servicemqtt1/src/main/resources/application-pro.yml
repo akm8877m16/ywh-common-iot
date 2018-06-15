@@ -9,10 +9,19 @@ spring:
         ddl-auto: update
   datasource:
       url: jdbc:mysql://118.190.202.155:3306/ywh_iot_test
-      username: root
+      username: user
       password: Ywh@68531026
-      driver-class-name: com.mysql.jdbc.Driver
-
+      druid:
+        initialSize: 5
+        minIdle: 5
+        maxActive: 20
+        maxWait: 60000
+        timeBetweenEvictionRunsMillis: 60000
+        minEvictableIdleTimeMillis: 300000
+        validationQuery: SELECT 1 FROM DUAL
+        testWhileIdle: true
+        testOnBorrow: false
+        testOnReturn: false
 
 server:
   port: 8070
