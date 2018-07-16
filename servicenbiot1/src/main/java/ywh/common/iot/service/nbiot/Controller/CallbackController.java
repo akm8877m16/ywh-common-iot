@@ -45,4 +45,27 @@ public class CallbackController {
         return ResultUtil.success();
     }
 
+    @ApiOperation(value = "设备数据变化通知",notes = "订阅设备数据变化通知后(订阅的通知类型为 deviceDataChanged),设备数据发生变 化时平台会给第三方应用推送设备数据变化通知。")
+    @PostMapping(value = "/deviceDataChanged")
+    public Msg deviceDataChanged(@RequestBody String params){
+        logger.info(params);
+        System.out.println(params);
+        Map map = JsonUtil.string2Map(params);
+        logger.info(map.toString());
+        System.out.println(map.toString());
+        return ResultUtil.success();
+    }
+
+    @ApiOperation(value = "批量设备数据变化通知",notes = "订阅设备数据批量变化通知后(订阅的通知类型为 deviceDatasChanged),发生批量设备数据变化时,平台会给第三方应用推送设备数据批量变化通知。")
+    @PostMapping(value = "/deviceDatasChanged")
+    public Msg deviceDatasChanged(@RequestBody String params){
+        logger.info(params);
+        System.out.println(params);
+        Map map = JsonUtil.string2Map(params);
+        logger.info(map.toString());
+        System.out.println(map.toString());
+        return ResultUtil.success();
+    }
+
+
 }

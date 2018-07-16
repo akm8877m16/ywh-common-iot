@@ -44,10 +44,10 @@ public class HttpClientUtils2 {
     private static int MAXCONNECTION = 10;
     private static int DEFAULTMAXCONNECTION = 5;
 
-    //private static String CLIENT_KEY_STORE =  "file:/home/ywh-common-iot-test/outgoing.CertwithKey.pkcs12";
-    //private static String CLIENT_TRUST_KEY_STORE = "file:/home/ywh-common-iot-test/ca.jks";
-    private static String CLIENT_KEY_STORE =  "classpath:outgoing.CertwithKey.pkcs12";
-    private static String CLIENT_TRUST_KEY_STORE = "classpath:ca.jks";
+    private static String CLIENT_KEY_STORE =  "file:/home/ywh-common-iot-test/outgoing.CertwithKey.pkcs12";
+    private static String CLIENT_TRUST_KEY_STORE = "file:/home/ywh-common-iot-test/ca.jks";
+    //private static String CLIENT_KEY_STORE =  "classpath:outgoing.CertwithKey.pkcs12";
+    //private static String CLIENT_TRUST_KEY_STORE = "classpath:ca.jks";
     private static String CLIENT_KEY_STORE_PASSWORD = "IoM@1234";
     private static String CLIENT_TRUST_KEY_STORE_PASSWORD = "Huawei@123";
     private static String CLIENT_KEY_PASS = "IoM@1234";
