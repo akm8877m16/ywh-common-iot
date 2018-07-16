@@ -67,5 +67,37 @@ public class CallbackController {
         return ResultUtil.success();
     }
 
+    @ApiOperation(value = "设备服务信息变化通知",notes = "订阅设备服务信息变化通知后(订阅的通知类型为 serviceInfoChanged),设备服务信息发生变化时平台会给第三方应用推送设备服务信息变化通知。")
+    @PostMapping(value = "/serviceInfoChanged")
+    public Msg serviceInfoChanged(@RequestBody String params){
+        logger.info(params);
+        System.out.println(params);
+        Map map = JsonUtil.string2Map(params);
+        logger.info(map.toString());
+        System.out.println(map.toString());
+        return ResultUtil.success();
+    }
+
+    @ApiOperation(value = "设备命令响应通知",notes = "订阅设备命令响应通知后(订阅的通知类型为 commandRsp),设备发送命令响应消息给平台时,平台会给第三方应用推送设备命令响应通知。")
+    @PostMapping(value = "/commandRsp")
+    public Msg commandRsp(@RequestBody String params){
+        logger.info(params);
+        System.out.println(params);
+        Map map = JsonUtil.string2Map(params);
+        logger.info(map.toString());
+        System.out.println(map.toString());
+        return ResultUtil.success();
+    }
+
+    @ApiOperation(value = "设备事件通知",notes = "订阅设备事件通知后(订阅的通知类型为 deviceEvent),设备上报事件给平台时,平台会给第三方应用推送设备事件通知。")
+    @PostMapping(value = "/deviceEvent")
+    public Msg deviceEvent(@RequestBody String params){
+        logger.info(params);
+        System.out.println(params);
+        Map map = JsonUtil.string2Map(params);
+        logger.info(map.toString());
+        System.out.println(map.toString());
+        return ResultUtil.success();
+    }
 
 }
